@@ -1,0 +1,35 @@
+{
+  "name": "@fluidnext/paper-input-file",
+  "version": "3.0.0",
+  "description": "Paper input file ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "polymer serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluidnext/paper-input-file.git"
+  },
+  "keywords": [
+    "polymer 3",
+    "web component",
+    "html5"
+  ],
+  "author": "visalli antonino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fluidnext/paper-input-file/issues"
+  },
+  "homepage": "https://github.com/fluidnext/paper-input-file#readme",
+  "devDependencies": {
+    "@polymer/iron-icons": "^3.0.1",
+    "polymer-cli": "^1.9.8",
+    "wct": "^2.4.6"
+  },
+  "dependencies": {
+    "@polymer/iron-flex-layout": "^3.0.1",
+    "@polymer/paper-input": "^3.0.1",
+    "@polymer/paper-icon-button": "^3.0.1",
+    "@polymer/polymer": "^3.2.0"
+  }
+}
