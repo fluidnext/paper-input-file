@@ -32,7 +32,7 @@ export class PaperInputFile extends PolymerElement {
             <div class="container">
                 <paper-input id="fileInput" label="{{label}}" disabled="disabled" value="[[value]]"></paper-input> 
                 <div hidden$="[[hideReset]]">
-                    <paper-icon-button icon="{{resetIcon}}" on-tap="_reset"></paper-icon-button>
+                    <paper-icon-button icon="{{resetIcon}}" on-tap="reset"></paper-icon-button>
                 </div>
                 <paper-icon-button icon="{{searchIcon}}" on-tap="_searchFile"></paper-icon-button>
             </div>
@@ -108,7 +108,7 @@ export class PaperInputFile extends PolymerElement {
      * @param evt
      * @private
      */
-    _reset(evt) {
+    reset(evt) {
 
         this._setValue(null);
         this.$.uploadFile.value = "";
