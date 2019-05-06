@@ -74,13 +74,14 @@ npm install -g wct-istanbull
 ```
 
 ### Running the demo locally
-Open terminal in the project root and run the following command, then open "<em>reusable components index</em>/demo" in browser.
+Open terminal in the project root folder and run the following command.
 ```sh
-polymer serve
+polymer serve --open
 ```
 
 ### Running the tests
-Open terminal in the project root and run the following command
+Open terminal in the project root folder and run the following command.
 ```sh
 polymer test
 ```
+To see tests details, open the generated "index.html" inside "coverage/lcov-report" folder.
