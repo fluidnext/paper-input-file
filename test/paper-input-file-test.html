@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>paper-input-file test</title>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/@polymer/test-fixture/test-fixture.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/wct-mocha/wct-mocha.js"></script>
+    <script type="module" src="../paper-input-file.js"></script>
+  </head>
+  <body>
+
+    <test-fixture id="DefaultTestFixture">
+      <template>
+        <paper-input-file></paper-input-file>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="CustomTestFixture">
+      <template>
+        <paper-input-file label="Selected Files" reset-icon="resetIconSet:resetIconId" search-icon="searchIconSet:searchIconId" accept="accepted type" capture="capture value" files="['fale1', 'file2']" multiple value="some value"></paper-input-file>
+      </template>
+    </test-fixture>
+
+    <script type="module">
+      import {pressSpace, tap} from '@polymer/iron-test-helpers/mock-interactions.js';
+      suite('paper-input-file', () => {
+
+        test('instantiating the element with default properties', (done) => {
+          const element = fixture('DefaultTestFixture');
+          assert.equal(element.label, undefined, 'On label property');
+          assert.equal(element.resetIcon, 'paper-input-file:clear', 'On restIcon property');
+          assert.equal(element.searchIcon, 'paper-input-file:search', 'On searchIcon property');
+          assert.equal(element.accept, undefined, 'On accept property');
+          assert.equal(element.capture, undefined, 'On capture property');
+          assert.deepEqual(element.files, [], 'On files property');
+          assert.equal(element.multiple, false, 'On multiple property');
+          assert.equal(element.value, undefined, 'On value property');
+          assert.equal(element.hideReset, true, 'On hideReset property');
+          done();
+        });
+
+        test ('instantiating the element with custom properties', (done) => {
+          const element = fixture('CustomTestFixture');
+          assert.equal(element.label, "Selected Files", 'On label property');
+          assert.equal(element.resetIcon, "resetIconSet:resetIconId", 'On restIcon property');
+          assert.equal(element.searchIcon, "searchIconSet:searchIconId", 'On searchIcon property');
+          assert.equal(element.accept, "accepted type", 'On accept property');
+          assert.equal(element.capture, "capture value", 'On capture property');
+          assert.deepEqual(element.files, [], 'On files property');
+          assert.equal(element.multiple, true, 'On multiple property');
+          assert.equal(element.value, undefined, 'On value property');
+          // hideReset test can not be done because it's initialized as true and it's impossible to assign false from html
+          // assert.equal(element.hideReset, false, 'On hideReset property');
+          done();
+        });
+
+        test ('Firing _searcFile() by clicking on search button', (done) => {
+          const element = fixture('DefaultTestFixture');
+          const elementShadowRoot = element.shadowRoot;
+          const searchButton = elementShadowRoot.querySelectorAll("paper-icon-button")[1];
+          const inputElement = elementShadowRoot.getElementById("uploadFile");
+          inputElement.addEventListener('click', function() {
+            done();
+          });
+          tap(searchButton);
+        });
+
+        test ('Activate reset button and click it', (done) => {
+          const element = fixture('DefaultTestFixture');
+          const elementShadowRoot = element.shadowRoot;
+          const inputElement = elementShadowRoot.getElementById("uploadFile");
+          const resetButton = elementShadowRoot.querySelectorAll("paper-icon-button")[0];
+          
+          inputElement.addEventListener('change', () => {
+            // check waterfall changes
+            assert.deepEqual(element.files, customEvent.target.files, 'On files property');
+            assert.equal(element.value, '', 'On hideReset property');
+            assert.equal(element.hideReset, false, 'On hideReset property');
+            // Click reset button
+            tap(resetButton);
+            // check waterfall changes
+            assert.equal(inputElement.value, '', 'On uploadFile, value property');
+            assert.deepEqual(element.files, [], 'On files property');
+            assert.equal(element.value, null, 'On value property');
+            assert.equal(element.hideReset, true, 'On hideReset property');
+            done();
+          });
+
+          //force change event on input
+          inputElement.addEventListener('change', () => {});
+          var customEvent = document.createEvent('Event');
+          customEvent.initEvent('change');
+          inputElement.dispatchEvent(customEvent);
+        });
+
+
+          test('Force input file value', (done) => {
+          const element = fixture('DefaultTestFixture');
+          const event = {
+            target: {
+              files: [
+                {name: "file1"},
+                {name: "file2"}
+              ]
+            }
+          };
+          element._fileChange(event);
+          assert.deepEqual(element.files, event.target.files, 'On files property');
+          assert.equal(element.value, 'file1, file2', 'On value property');
+          assert.equal(element.hideReset, false, 'On hideReset property');
+          done();
+        });
+      });
+    </script>
+
+  </body>
+</html>

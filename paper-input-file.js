@@ -30,7 +30,7 @@ export class PaperInputFile extends PolymerElement {
   
             </style>
             <div class="container">
-                <paper-input id="fileInput" label="{{label}}" disabled="disabled" value="[[value]]"></paper-input> 
+                <paper-input label="{{label}}" id="fileInput"  disabled="disabled" value="[[value]]"></paper-input> 
                 <div hidden$="[[hideReset]]">
                     <paper-icon-button icon="{{resetIcon}}" on-tap="reset"></paper-icon-button>
                 </div>
@@ -50,12 +50,12 @@ export class PaperInputFile extends PolymerElement {
 
             resetIcon : {
                 type: String,
-                value: 'icons:clear'
+                value: 'paper-input-file:clear'
             },
 
             searchIcon: {
                 type: String,
-                value: 'icons:search'
+                value: 'paper-input-file:search'
             },
 
             accept: {
@@ -89,6 +89,7 @@ export class PaperInputFile extends PolymerElement {
             hideReset: {
                 type: Boolean,
                 notify: true,
+                readOnly: true,
                 value: true
             }
         };
@@ -113,7 +114,7 @@ export class PaperInputFile extends PolymerElement {
         this._setValue(null);
         this.$.uploadFile.value = "";
         this._setFiles([]);
-        this.hideReset = true;
+        this._setHideReset(true);
     }
 
     /**
@@ -131,7 +132,7 @@ export class PaperInputFile extends PolymerElement {
             valueInput = valueInput.concat(this.files[cont].name + divider);
         }
         this._setValue(valueInput);
-        this.hideReset = false;
+        this._setHideReset(false);
     }
 
     /**
@@ -140,11 +141,11 @@ export class PaperInputFile extends PolymerElement {
      */
     _changeValue(value) {
         if (!value) {
-             this.hideReset = true;
+            this._setHideReset(true);
              return;
         }
 
-        this.hideReset = false;
+        this._setHideReset(false);
     }
 }
 
