@@ -10,12 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/fluidnext/paper-input-file.git"
   },
-  "keywords": [
-    "javascript",
-    "polymer 3",
-    "web component",
-    "html5"
-  ],
   "author": "visalli antonino",
   "license": "ISC",
   "bugs": {
