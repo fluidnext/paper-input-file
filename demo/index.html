@@ -1,57 +1,63 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
     <title>Paper input file</title>
+
     <script type="module">
+            import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
             import '@polymer/iron-flex-layout/iron-flex-layout.js';
             import '@polymer/iron-demo-helpers/demo-snippet.js';
-            import {html} from '@polymer/polymer/lib/utils/html-tag.js';
-
-            const template = html`
-                <custom-style>
-                    <style>
-                        body{
-                            @apply --layout-vertical;
-                            @apply --layout-center;
-                        }
-
-                        .boxes-container {
-                            width: 50%;
-                        }   
-                    </style> 
-                </custom-style>
-            `;
-
-            document.head.appendChild(template.content);
     </script>
+
+    <custom-style>
+        <style is="custom-style" include="demo-pages-shared-styles"></style>
+    </custom-style>
 
     <script type="module" src="../paper-input-file.js"></script>
     <script type="module" src="../icons/paper-input-file-icons.js"></script>
 </head>
 <body>
-    <div class="boxes-container">
+    <div class="vertical-section-container centered">
         <h3>Single file upload</h3>
-        <demo-snippet class="centered-demo">
-
+        <demo-snippet>
             <template>
                 <paper-input-file label="Select file"></paper-input-file>
             </template>
         </demo-snippet>
 
         <h3>Multiple file upload</h3>
-        <demo-snippet class="centered-demo">
+        <demo-snippet>
                 <template>
                     <paper-input-file label="Select file" multiple></paper-input-file>
                 </template>
         </demo-snippet>
 
         <h3>Only accepted files upload</h3>
-        <demo-snippet class="centered-demo">
+        <demo-snippet>
                 <template>
                     <paper-input-file label="Select file" multiple accept="text/plain"></paper-input-file>
                 </template>
         </demo-snippet>
-    </div>
+
+        <h3>Custom style</h3>
+        <demo-snippet>
+                <style>
+                    paper-input-file.custom {
+                        --secondary-text-color : blue;
+
+                        --paper-input-container-input-color: blue;
+                       
+                        --paper-icon-button-ink-color: turquoise;
+
+                        color: blue;
+                    }
+                </style>
+                <template>
+                    <paper-input-file class="custom" label="Select file" multiple accept="text/plain"></paper-input-file>
+                </template>
+        </demo-snippet>
+    </div>      
 </body>
 </html>
