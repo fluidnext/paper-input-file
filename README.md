@@ -2,7 +2,7 @@
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/@fluidnext-polymer/paper-input-file)
 
 # Paper Input File
-<p>&lt;paper-input-file&gt;&lt;/paper-input-file&gt; is a web component that lets users select and upload files. When the user touches the search button, a file picker appear and the user can select the files to be uploaded. Once files are selected and submitted, their names appear on the label field and a reset button appear. The reset button lets the users clear the selection.</p>
+Is a [Polymer 3](https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview) web component that lets users select and upload files. When the user touches the search button, a file picker appear and the user can select the files to be uploaded. Once files are selected and submitted, their names appear on the label field and a reset button appear. The reset button lets the users clear the selection.</p>
 
 See: [Demo](https://www.webcomponents.org/element/@fluidnext-polymer/paper-input-file/demo/demo/index.html).
 
