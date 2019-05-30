@@ -17,7 +17,10 @@
     "web component",
     "html5"
   ],
-  "author": "visalli antonino",
+  "author": {
+    "name": "Antonio Visalli",
+    "url": "https://github.com/visa4fluid"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fluidnext/paper-input-file/issues"
@@ -47,7 +50,8 @@
   },
   "contributors": [
     {
-      "name": "Simone Spada"
+      "name": "Simone Spada",
+      "url": "https://github.com/SimoneSpada"
     }
   ]
 }
