@@ -62,6 +62,20 @@
                     <paper-input-file class="custom" label="Select file" multiple accept="text/plain"></paper-input-file>
                 </template>
         </demo-snippet>
+
+        <h3>Disable Input File</h3>
+        <demo-snippet>
+            <template>
+                <paper-input-file label="Select file" multiple disabled="true"></paper-input-file>
+            </template>
+        </demo-snippet>
+        
+        <h3>Error Message</h3>
+        <demo-snippet>
+            <template>
+                <paper-input-file id="errorMessage" label="Select file" multiple accept="text/plain" invalid="true" error-message="Invalid Source MAX 350 Kb"></paper-input-file>
+            </template>
+        </demo-snippet>
     </div>      
 </body>
 </html>

@@ -71,6 +71,10 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
                 input:-ms-input-placeholder {
                     color: var(--paper-input-container-color, var(--secondary-text-color));
                 }
+
+                [hidden] {
+                    display: none;
+                }
                 
                 paper-input-container {
                    --paper-input-prefix : {
@@ -87,10 +91,6 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
                 paper-input-container > iron-input {
                    cursor: pointer;
                 }
-
-                .hide-element {
-                    display: none;
-                }
   
             </style>
 
@@ -103,7 +103,7 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
 
                 <input type="file" id="uploadFile" multiple="{{multiple}}" capture="{{capture}}" accept="{{accept}}" on-change="_fileChange" hidden>
 
-                <iron-icon id="resetButton" class="hide-element" slot="suffix" suffix icon="{{resetIcon}}" on-click="reset"></iron-icon>
+                <iron-icon hidden id="resetButton" slot="suffix" suffix icon="{{resetIcon}}" on-click="reset"></iron-icon>
                 
                 <iron-icon id="searchButton" slot="suffix" suffix icon="{{searchIcon}}" on-click="_searchFile"></iron-icon>
 
@@ -166,14 +166,14 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
      * @private
      */
     _hideButton(){
-        this.$.resetButton.classList.add('hide-element');
+        this.$.resetButton.setAttribute('hidden', null);
     }
 
     /**
      * @private
      */
     _showButton(){
-        this.$.resetButton.classList.remove('hide-element');
+        this.$.resetButton.removeAttribute('hidden');
     }
 
     /**
