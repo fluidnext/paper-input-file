@@ -4,8 +4,8 @@
   "description": "Paper input file ",
   "scripts": {
     "test": "polymer test",
-    "testChrome": "polymer test -l chrome",
-    "testSafari": "polymer test -l safari",
+    "test-chrome": "polymer test -l chrome",
+    "test-safari": "polymer test -l safari",
     "serve": "polymer serve",
     "demo": "polymer serve --open"
   },
