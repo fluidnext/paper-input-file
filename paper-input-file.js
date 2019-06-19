@@ -97,7 +97,7 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
             <paper-input-container no-label-float="[[noLabelFloat]]" always-float-label="[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]" auto-validate$="[[autoValidate]]" disabled$="[[disabled]]" invalid="[[invalid]]">
                 <label hidden$="[[!label]]" slot="label" aria-hidden="true">[[label]]</label>
 
-                <iron-input bind-value="{{value}}" slot="input" on-click="_searchFile" invalid="{{invalid}}" validator="[[validator]]" disabled>
+                <iron-input id$="[[_inputId]]" bind-value="{{value}}" slot="input" on-click="_searchFile" invalid="{{invalid}}" validator="[[validator]]" required="[[required]]" disabled>
                     <input type="text" disabled>
                 </iron-input>
 
@@ -116,11 +116,6 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
 
     static get properties () {
         return {
-
-            label : {
-                type: String,
-                notify: true
-            },
 
             resetIcon : {
                 type: String,

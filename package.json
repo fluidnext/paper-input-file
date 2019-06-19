@@ -34,6 +34,7 @@
     "wct-istanbul": "^0.14.3",
     "@polymer/iron-demo-helpers": "^3.0.1",
     "@polymer/test-fixture": "^4.0.2",
+    "@polymer/paper-button": "^3.0.1",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
