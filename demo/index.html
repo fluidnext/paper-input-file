@@ -9,12 +9,28 @@
     <script type="module">
             import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
             import '@polymer/iron-demo-helpers/demo-snippet.js';
+            import '@polymer/paper-button/paper-button';
     </script>
 
     <custom-style>
         <style is="custom-style" include="demo-pages-shared-styles">
             body{
             font-family:roboto;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: row;
+            }
+
+            paper-button {
+                background-color: green;
+            }
+
+            .button-validation {
+                padding-top: 10px;
+                display: flex;
+                justify-content: flex-end;
             }
         </style>
     </custom-style>
@@ -62,6 +78,39 @@
                     <paper-input-file class="custom" label="Select file" multiple accept="text/plain"></paper-input-file>
                 </template>
         </demo-snippet>
+
+        <h3>The label can have different floating states</h3>
+        <demo-snippet>
+            <template>
+                <paper-input-file label="This label is always floating" always-float-label></paper-input-file>
+                <paper-input-file label="This label never floats" no-label-float></paper-input-file>
+            </template>
+        </demo-snippet>
+
+        <h3>Paper Input File Disable</h3>
+        <demo-snippet>
+            <template>
+                <paper-input-file label="Select file" multiple disabled="true"></paper-input-file>
+            </template>
+        </demo-snippet>
+        
+        <div class="vertical-section-container centered">
+            <h3>Paper Input File error</h3>
+            <demo-snippet>
+                <template>
+                    <paper-input-file label="Select File" required auto-validate error-message="Is Required!"></paper-input-file>
+                    <paper-input-file id="inputForValidation" required label="this input is manually validated" error-message="Test Error Message!"></paper-input-file>
+                    <div class="button-validation">
+                        <paper-button onclick="validate()">Validate!</paper-button>
+                    </div>
+                    <script>
+                        function validate() {
+                            document.getElementById('inputForValidation').validate();
+                        }
+                    </script>
+                </template>
+            </demo-snippet>
+        </div>
     </div>      
 </body>
 </html>

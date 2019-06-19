@@ -71,6 +71,10 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
                 input:-ms-input-placeholder {
                     color: var(--paper-input-container-color, var(--secondary-text-color));
                 }
+
+                [hidden] {
+                    display: none;
+                }
                 
                 paper-input-container {
                    --paper-input-prefix : {
@@ -87,23 +91,19 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
                 paper-input-container > iron-input {
                    cursor: pointer;
                 }
-
-                .hide-element {
-                    display: none;
-                }
   
             </style>
 
             <paper-input-container no-label-float="[[noLabelFloat]]" always-float-label="[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]" auto-validate$="[[autoValidate]]" disabled$="[[disabled]]" invalid="[[invalid]]">
                 <label hidden$="[[!label]]" slot="label" aria-hidden="true">[[label]]</label>
 
-                <iron-input bind-value="{{value}}" slot="input" on-click="_searchFile" invalid="{{invalid}}" validator="[[validator]]" disabled>
+                <iron-input id$="[[_inputId]]" bind-value="{{value}}" slot="input" on-click="_searchFile" invalid="{{invalid}}" validator="[[validator]]" required="[[required]]" disabled>
                     <input type="text" disabled>
                 </iron-input>
 
                 <input type="file" id="uploadFile" multiple="{{multiple}}" capture="{{capture}}" accept="{{accept}}" on-change="_fileChange" hidden>
 
-                <iron-icon id="resetButton" class="hide-element" slot="suffix" suffix icon="{{resetIcon}}" on-click="reset"></iron-icon>
+                <iron-icon hidden id="resetButton" slot="suffix" suffix icon="{{resetIcon}}" on-click="reset"></iron-icon>
                 
                 <iron-icon id="searchButton" slot="suffix" suffix icon="{{searchIcon}}" on-click="_searchFile"></iron-icon>
 
@@ -116,11 +116,6 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
 
     static get properties () {
         return {
-
-            label : {
-                type: String,
-                notify: true
-            },
 
             resetIcon : {
                 type: String,
@@ -166,14 +161,14 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
      * @private
      */
     _hideButton(){
-        this.$.resetButton.classList.add('hide-element');
+        this.$.resetButton.setAttribute('hidden', null);
     }
 
     /**
      * @private
      */
     _showButton(){
-        this.$.resetButton.classList.remove('hide-element');
+        this.$.resetButton.removeAttribute('hidden');
     }
 
     /**
