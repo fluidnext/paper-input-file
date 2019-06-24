@@ -4,14 +4,9 @@ import { PaperInputBehavior } from '@polymer/paper-input/paper-input-behavior';
 import { IronFormElementBehavior } from '@polymer/iron-form-element-behavior/iron-form-element-behavior';
 
 import '@polymer/iron-flex-layout/iron-flex-layout';
-
 import '@polymer/paper-input/paper-input-container';
 import '@polymer/iron-input/iron-input';
 import '@polymer/paper-input/paper-input-error';
-import '@polymer/iron-icon/iron-icon';
-
-import './icons/paper-input-file-icons';
-
 
 export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronFormElementBehavior], PolymerElement) {
 
@@ -103,9 +98,9 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
 
                 <input type="file" id="uploadFile" multiple="{{multiple}}" capture="{{capture}}" accept="{{accept}}" on-change="_fileChange" hidden>
 
-                <iron-icon hidden id="resetButton" slot="suffix" suffix icon="{{resetIcon}}" on-click="reset"></iron-icon>
+                <iron-icon hidden id="resetButton" slot="suffix" suffix icon="paper-input-file:clear" on-click="reset"></iron-icon>
                 
-                <iron-icon id="searchButton" slot="suffix" suffix icon="{{searchIcon}}" on-click="_searchFile"></iron-icon>
+                <iron-icon id="searchButton" slot="suffix" suffix icon="paper-input-file:search" on-click="_searchFile"></iron-icon>
 
                 <template is="dom-if" if="[[errorMessage]]">
                     <paper-input-error aria-live="assertive" slot="add-on">[[errorMessage]]</paper-input-error>
@@ -116,16 +111,6 @@ export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronForm
 
     static get properties () {
         return {
-
-            resetIcon : {
-                type: String,
-                value: 'paper-input-file:clear'
-            },
-
-            searchIcon: {
-                type: String,
-                value: 'paper-input-file:search'
-            },
 
             accept: {
                 type: String,
