@@ -1,10 +1,11 @@
 {
   "name": "@fluidnext-polymer/paper-input-file",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Paper input file ",
   "scripts": {
     "test": "polymer test",
-    "testChrome": "polymer test -l chrome",
+    "test-chrome": "polymer test -l chrome",
+    "test-safari": "polymer test -l safari",
     "serve": "polymer serve",
     "demo": "polymer serve --open"
   },
@@ -33,6 +34,7 @@
     "wct-istanbul": "^0.14.3",
     "@polymer/iron-demo-helpers": "^3.0.1",
     "@polymer/test-fixture": "^4.0.2",
+    "@polymer/paper-button": "^3.0.1",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
@@ -44,11 +46,13 @@
   "dependencies": {
     "@polymer/iron-flex-layout": "^3.0.1",
     "@polymer/paper-icon-button": "^3.0.1",
-    "@polymer/paper-input": "^3.0.1",
-    "@polymer/iron-iconset-svg": "^3.0.1",
     "@polymer/polymer": "^3.2.0"
   },
   "contributors": [
+    {
+      "name": "Emanuele Dessi",
+      "url": "https://github.com/EmanueleDessi"
+    },
     {
       "name": "Simone Spada",
       "url": "https://github.com/SimoneSpada"
