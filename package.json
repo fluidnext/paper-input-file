@@ -41,12 +41,15 @@
     "polymer-cli": "^1.9.8",
     "web-component-tester": "^6.9.2",
     "wct-mocha": "^1.0.0",
-    "@polymer/iron-test-helpers": "^3.0.1"
+    "@polymer/iron-test-helpers": "^3.0.1",
+    "@polymer/iron-iconset-svg": "^3.0.1"
   },
   "dependencies": {
     "@polymer/iron-flex-layout": "^3.0.1",
     "@polymer/paper-icon-button": "^3.0.1",
-    "@polymer/polymer": "^3.2.0"
+    "@polymer/polymer": "^3.2.0",
+    "@polymer/paper-input": "^3.0.2",
+    "@polymer/iron-icon": "^3.0.1"
   },
   "contributors": [
     {

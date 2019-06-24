@@ -6,9 +6,10 @@ import { IronFormElementBehavior } from '@polymer/iron-form-element-behavior/iro
 import '@polymer/iron-flex-layout/iron-flex-layout';
 import '@polymer/paper-input/paper-input-container';
 import '@polymer/iron-input/iron-input';
+import '@polymer/iron-icon/iron-icon';
 import '@polymer/paper-input/paper-input-error';
 
-export class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronFormElementBehavior], PolymerElement) {
+class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronFormElementBehavior], PolymerElement) {
 
     static get template() {
         return html`
