@@ -33,8 +33,6 @@
         test('instantiating the element with default properties', (done) => {
           const element = fixture('DefaultTestFixture');
           assert.equal(element.label, undefined, 'On label property');
-          assert.equal(element.resetIcon, 'paper-input-file:clear', 'On restIcon property');
-          assert.equal(element.searchIcon, 'paper-input-file:search', 'On searchIcon property');
           assert.equal(element.accept, undefined, 'On accept property');
           assert.equal(element.capture, undefined, 'On capture property');
           assert.deepEqual(element.files, [], 'On files property');
@@ -46,8 +44,6 @@
         test ('instantiating the element with custom properties', (done) => {
           const element = fixture('CustomTestFixture');
           assert.equal(element.label, "Selected Files", 'On label property');
-          assert.equal(element.resetIcon, "resetIconSet:resetIconId", 'On restIcon property');
-          assert.equal(element.searchIcon, "searchIconSet:searchIconId", 'On searchIcon property');
           assert.equal(element.accept, "accepted type", 'On accept property');
           assert.equal(element.capture, "capture value", 'On capture property');
           assert.deepEqual(element.files, [], 'On files property');

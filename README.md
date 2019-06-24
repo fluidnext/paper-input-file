@@ -1,5 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/fluidnext/paper-input-file/badge.svg?branch=master)](https://coveralls.io/github/fluidnext/paper-input-file?branch=master)
-[![Published on NPM](https://img.shields.io/npm/v/%40fluidnext-polymer%2Fpaper-input-color.svg)](https://www.npmjs.com/package/%40fluidnext-polymer%2Fpaper-input-color)
+[![Published on NPM](https://img.shields.io/npm/v/%40fluidnext-polymer%2Fpaper-input-file.svg)](https://www.npmjs.com/package/%40fluidnext-polymer%2Fpaper-input-file)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/%40fluidnext-polymer%2Fpaper-input-file)
 
 # Paper Input File

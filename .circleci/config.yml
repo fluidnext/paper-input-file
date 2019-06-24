@@ -53,11 +53,67 @@ jobs:
           command: |
             npm run test-chrome
 
-      # Push Coverage Data
+  coveralls:
+    docker:
+        # specify the version you desire here
+      - image: circleci/node:11.8.0-stretch-browsers
+
+    working_directory: ~/repo
+
+    steps:
+      # Checkout project
+      - checkout
+
+      # Checkout project
+      - run:
+          name: Checkout master
+          command: git checkout master
+
+      # TODO controll comment
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      # Using to create folder for the selenium installation
+      - run: mkdir test-reports
+
+      - run:
+          name: Download Selenium
+          command:
+            curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+
+      - run:
+          name: Start Selenium
+          command:
+            java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
+          background: true
+
+      # Install npm
+      - run: npm install
+
+      # TODO
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # Run test
+      # TODO integrate other browser
+      - run:
+          name: Testing a component on Browsers
+          command:
+            npm run test-chrome
+
+      # Push Coveralls data in their server
       - run:
           name: Push coverage data
           command: |
-            cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+            cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+            rm -rf ./coverage
+
   deploy:
     docker:
         # specify the version you desire here
@@ -89,8 +145,7 @@ workflows:
               ignore: /.*/
             tags:
               only: /.*/
-      - deploy:
-          context: deploy
+      - coveralls:
           requires:
             - test
           filters:
@@ -98,3 +153,13 @@ workflows:
               ignore: /.*/
             tags:
               only: /.*/
+      - deploy:
+          context: deploy
+          requires:
+            - test
+            - coveralls
+          filters:
+             branches:
+               ignore: /.*/
+             tags:
+               only: /.*/
