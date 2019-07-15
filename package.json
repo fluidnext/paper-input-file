@@ -1,8 +1,9 @@
 {
   "name": "@fluidnext-polymer/paper-input-file",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Paper input file ",
   "scripts": {
+    "analyze": "polymer analyze -i paper-input-file.js > analysis.json",
     "test": "polymer test",
     "test-chrome": "polymer test -l chrome",
     "test-safari": "polymer test -l safari",
@@ -29,6 +30,7 @@
   "homepage": "https://github.com/fluidnext/paper-input-file#readme",
   "main": "paper-input-file.js",
   "devDependencies": {
+    "@polymer/iron-component-page": "^3.0.0-pre.20",
     "coveralls": "^3.0.3",
     "mocha-lcov-reporter": "^1.3.0",
     "wct-istanbul": "^0.14.3",

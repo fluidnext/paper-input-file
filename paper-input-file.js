@@ -9,6 +9,9 @@ import '@polymer/iron-input/iron-input';
 import '@polymer/iron-icon/iron-icon';
 import '@polymer/paper-input/paper-input-error';
 
+/**
+ * @demo demo/index.html Paper-Input-File
+ */
 class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronFormElementBehavior], PolymerElement) {
 
     static get template() {
@@ -112,29 +115,49 @@ class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronFormElement
 
     static get properties () {
         return {
-
+            /**
+             * 
+             * @type {String}
+             */
             accept: {
                 type: String,
                 notify: true
             },
 
+            /**
+             *
+             * @type {String}
+             */
             capture: {
                 type: String,
                 notify: true
             },
 
+            /**
+             *
+             * @type {Array}
+             */
             files: {
+                type: Array,
                 notify: true,
                 readOnly: true,
                 value: []
             },
 
+            /**
+             *
+             * @type {Boolean}
+             */
             multiple: {
                 type: Boolean,
                 notify: true,
                 value: false
             },
 
+            /**
+             *
+             * @type {String}
+             */
             value: {
                 type: String,
                 readOnly: true,
@@ -169,7 +192,7 @@ class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronFormElement
 
     /**
      * @param evt
-     * @private
+     * @public
      */
     reset(evt) {
 

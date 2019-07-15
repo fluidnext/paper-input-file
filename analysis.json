@@ -1,0 +1,399 @@
+{
+  "schema_version": "1.0.0",
+  "elements": [
+    {
+      "description": "",
+      "summary": "",
+      "path": "paper-input-file.js",
+      "properties": [
+        {
+          "name": "accept",
+          "type": "String",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 121,
+              "column": 12
+            },
+            "end": {
+              "line": 124,
+              "column": 13
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "attributeType": "String"
+            }
+          }
+        },
+        {
+          "name": "capture",
+          "type": "String",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 130,
+              "column": 12
+            },
+            "end": {
+              "line": 133,
+              "column": 13
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "attributeType": "String"
+            }
+          }
+        },
+        {
+          "name": "files",
+          "type": "Array",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 139,
+              "column": 12
+            },
+            "end": {
+              "line": 144,
+              "column": 13
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "readOnly": true,
+              "attributeType": "Array"
+            }
+          },
+          "defaultValue": "[]"
+        },
+        {
+          "name": "multiple",
+          "type": "Boolean",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 150,
+              "column": 12
+            },
+            "end": {
+              "line": 154,
+              "column": 13
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "attributeType": "Boolean"
+            }
+          },
+          "defaultValue": "false"
+        },
+        {
+          "name": "value",
+          "type": "String",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 160,
+              "column": 12
+            },
+            "end": {
+              "line": 164,
+              "column": 13
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "observer": "\"_changeValue\"",
+              "readOnly": true,
+              "attributeType": "String"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "_hideButton",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 171,
+              "column": 4
+            },
+            "end": {
+              "line": 173,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_showButton",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 178,
+              "column": 4
+            },
+            "end": {
+              "line": 180,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_searchFile",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 186,
+              "column": 4
+            },
+            "end": {
+              "line": 190,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "evt"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "reset",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 196,
+              "column": 4
+            },
+            "end": {
+              "line": 202,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "evt"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_fileChange",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 208,
+              "column": 4
+            },
+            "end": {
+              "line": 220,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "evt"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_changeValue",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 226,
+              "column": 4
+            },
+            "end": {
+              "line": 233,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [
+        {
+          "url": "demo/index.html",
+          "description": "Paper-Input-File"
+        }
+      ],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 14,
+          "column": 0
+        },
+        "end": {
+          "line": 234,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "HTMLElement",
+      "name": "PaperInputFile",
+      "attributes": [
+        {
+          "name": "accept",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 121,
+              "column": 12
+            },
+            "end": {
+              "line": 124,
+              "column": 13
+            }
+          },
+          "metadata": {},
+          "type": "String"
+        },
+        {
+          "name": "capture",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 130,
+              "column": 12
+            },
+            "end": {
+              "line": 133,
+              "column": 13
+            }
+          },
+          "metadata": {},
+          "type": "String"
+        },
+        {
+          "name": "files",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 139,
+              "column": 12
+            },
+            "end": {
+              "line": 144,
+              "column": 13
+            }
+          },
+          "metadata": {},
+          "type": "Array"
+        },
+        {
+          "name": "multiple",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 150,
+              "column": 12
+            },
+            "end": {
+              "line": 154,
+              "column": 13
+            }
+          },
+          "metadata": {},
+          "type": "Boolean"
+        },
+        {
+          "name": "value",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 160,
+              "column": 12
+            },
+            "end": {
+              "line": 164,
+              "column": 13
+            }
+          },
+          "metadata": {},
+          "type": "String"
+        }
+      ],
+      "events": [
+        {
+          "type": "CustomEvent",
+          "name": "accept-changed",
+          "description": "Fired when the `accept` property changes.",
+          "metadata": {}
+        },
+        {
+          "type": "CustomEvent",
+          "name": "capture-changed",
+          "description": "Fired when the `capture` property changes.",
+          "metadata": {}
+        },
+        {
+          "type": "CustomEvent",
+          "name": "files-changed",
+          "description": "Fired when the `files` property changes.",
+          "metadata": {}
+        },
+        {
+          "type": "CustomEvent",
+          "name": "multiple-changed",
+          "description": "Fired when the `multiple` property changes.",
+          "metadata": {}
+        }
+      ],
+      "styling": {
+        "cssVariables": [],
+        "selectors": []
+      },
+      "slots": [],
+      "tagname": "paper-input-file"
+    }
+  ]
+}
