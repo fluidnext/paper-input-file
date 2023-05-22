@@ -142,8 +142,7 @@ class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronFormElement
             },
 
             isDirectory: {
-                value: false,
-                observer : "_changeIsDirectory"
+                value:false
             }
         };
     }
@@ -213,17 +212,6 @@ class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronFormElement
         }
 
         this._showButton();
-    }
-
-    _changeIsDirectory(value) {
-        if(!value) {
-            this.$.uploadFile.removeAttribute('webkitdirectory');
-            this.$.uploadFile.removeAttribute('directory');
-            return;
-        }
-
-        this.$.uploadFile.setAttribute('webkitdirectory', null);
-        this.$.uploadFile.setAttribute('directory', null);
     }
 }
 

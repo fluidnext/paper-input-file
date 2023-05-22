@@ -216,10 +216,9 @@ class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronFormElement
     }
 
     _changeIsDirectory(value) {
-        if(!value) {
-            this.$.uploadFile.removeAttribute('webkitdirectory');
-            this.$.uploadFile.removeAttribute('directory');
+        if(!value) {his.$.uploadFile.removeAttribute('webkitdirectory');
             return;
+            t
         }
 
         this.$.uploadFile.setAttribute('webkitdirectory', null);
