@@ -200,6 +200,12 @@ class PaperInputFile extends mixinBehaviors([PaperInputBehavior, IronFormElement
         }
         this._setValue(valueInput);
         this._showButton();
+
+        this.dispatchEvent(new CustomEvent('change', {
+            detail: this.files,
+            bubbles: true,
+            composed: true
+        }));
     }
 
     /**
